@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="doj" class="java.util.Date">
+		<property name="year" value="115" />
+		<property name="month" value="11" />
+		<property name="date" value="12" />
+    </bean>
+    
+    <bean id="dob" class="java.util.Date">
+		<property name="year" value="95" />
+		<property name="month" value="3" />
+		<property name="date" value="11" />
+    </bean>
+    
+    <bean id="dom" class="java.util.Date">
+		<property name="year" value="117" />
+		<property name="month" value="11" />
+		<property name="date" value="12" />
+    </bean>
+
+	<!-- Spring bean cfg(raja) -->
+	<bean id="rajaProfile" class="com.nt.beans.PersonProfile">
+		<constructor-arg value="42568975" />
+		<constructor-arg value="raja" />
+		<constructor-arg value="23.5f" />
+		<constructor-arg> <null/></constructor-arg>
+		<constructor-arg  ref="doj"/>
+		<constructor-arg ref="dom"/>
+	</bean>
+	
+	<!-- Spring bean cfg(rani) -->                              
+	<bean id="raniProfile" class="com.nt.beans.PersonProfile">
+		<constructor-arg value="42568975" />
+		<constructor-arg value="rani" />
+		<constructor-arg value="18.5f" />                           
+		<constructor-arg  ref="dob"/>
+		<constructor-arg  ref="doj"/>
+		<constructor-arg> <null/> </constructor-arg>
+	</bean>
+	
+	<!-- Spring bean cfg(suresh) -->
+	<bean id="sureshProfile" class="com.nt.beans.PersonProfile">
+		<constructor-arg value="42568975" />
+		<constructor-arg value="suresh" />
+		<constructor-arg value="48.5f" />
+		<constructor-arg  ref="dob"/>
+		<constructor-arg  ref="doj"/>
+		<constructor-arg  ref="dom"/>
+	</bean>
+
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!--  configure dependent classes -->
+  <bean id="pEngine"  class="com.nt.beans.PetrolEngine"/>
+  <bean id="dEngine"  class="com.nt.beans.DieselEngine"/>
+  <bean id="cngEngine"  class="com.nt.beans.CNGEngine"/>
+  
+  <!-- Configure Target classes -->
+  <bean id="vehicle" class="com.nt.beans.Vehicle">
+     <property name="engine" ref="cngEngine"/>
+  </bean>
+
+</beans>

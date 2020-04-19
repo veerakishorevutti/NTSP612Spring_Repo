@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  <!-- cfg Dependents -->
+  <bean id="crDtdc"  class="com.nt.beans.DTDC"/>
+  <bean id="crBDart"  class="com.nt.beans.BlueDart"/>
+  
+  <!-- Cfg Target -->
+  <bean id="fpkt"  class="com.nt.beans.Flipkart">
+     <!-- <property name="courier" ref="crBDart"/> -->
+     <constructor-arg name="courier" ref="crDtdc"/>
+  </bean>
+
+</beans>

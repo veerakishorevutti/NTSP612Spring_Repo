@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-merge="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!--Parent bean cfg -->
+	<bean id="bfEngg" class="com.nt.beans.EnggCourse" abstract="true">
+		<property name="subjects">
+			<list>
+				<value>M1</value>
+				<value>ED</value>
+				<value>Physics</value>
+				<value>Chemistry</value>
+			</list>
+		</property>
+	</bean>
+	<!--Child bean cfg1 -->
+	<bean id="ecfyEngg" class="com.nt.beans.EnggCourse" parent="bfEngg">
+		<property name="subjects">
+			<list merge="true">
+				<value>C</value>
+				<value>EDC</value>
+			</list>
+		</property>
+	</bean>
+	<!--Child bean cfg2 -->
+	<bean id="csfyEngg" class="com.nt.beans.EnggCourse" parent="bfEngg">
+		<property name="subjects">
+			<list merge="default">
+				<value>C</value>
+				<value>OS</value>
+			</list>
+		</property>
+	</bean>
+</beans>
